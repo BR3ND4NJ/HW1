@@ -85,6 +85,8 @@ public class Main {
                 System.out.print(sll.get(i).getElement() + ", ");
             }
         }
+
+        read.close();
     }
 
 
@@ -108,10 +110,10 @@ public class Main {
             }
             else {
                 int len = dll.getSize();
-                for (int i = 0; i < len; i++) {
+                for (int i = 1; i < len + 1; i++) {
                     int value = dll.get(i).getElement();
                     if (currGrade > value) {
-                        dll.addBetween(i, currGrade);
+                        dll.addBetween(currGrade, dll.get(i - 1), dll.get(i));
                         break;
                     }
                 }
@@ -142,7 +144,7 @@ public class Main {
         System.out.println();
         System.out.println("The top 15 Grades in the class (Highest to Lowest)");
 
-        for (int i = 0; i < dll.getSize(); i++) {
+        for (int i = 1; i < dll.getSize(); i++) {
             if (i == dll.getSize() - 1) {
                 System.out.print(dll.get(i).getElement());
             }
@@ -151,17 +153,23 @@ public class Main {
                 System.out.print(dll.get(i).getElement() + ", ");
             }
         }
+        read.close();
     }
 
 
     public static void main(String[] args) throws IOException{
+        generateRandomGrades();
+
         System.out.println("----------SINGLY LINKED LIST---------");
         SLLGrades();
         System.out.println();
         System.out.println();
 
+
+        generateRandomGrades();
+
         System.out.println("----------DOUBLY LINKED LIST---------");
-        //DLLGrades();
+        DLLGrades();
         System.out.println();
         System.out.println();
         //test

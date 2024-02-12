@@ -1,5 +1,5 @@
 public class DoublyLinkedList<E> {
-    private static class Node<E> {
+    public static class Node<E> {
         private E element;
         private Node<E> prev;
         private Node<E> next;
@@ -78,7 +78,7 @@ public class DoublyLinkedList<E> {
         return remove(trailer.getPrev());
     }
 
-    private void addBetween(E e, Node<E> predecessor, Node<E> successor) {
+    public void addBetween(E e, Node<E> predecessor, Node<E> successor) {
         Node<E> newest = new Node<>(e, predecessor, successor);
         predecessor.setNext(newest);
         successor.setPrev(newest);
@@ -93,8 +93,8 @@ public class DoublyLinkedList<E> {
         return node.getElement();
     }
 
-    public SinglyLinkedList.Node<E> get(int index) {
-        SinglyLinkedList.Node<E> answer = null;
+    public Node<E> get(int index) {
+        Node<E> answer = null;
         if (isEmpty()) {
             return null;
         }
