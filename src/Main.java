@@ -153,15 +153,16 @@ public class Main {
         }
     }
 
+
     public static void main(String[] args) throws IOException{
         System.out.println("----------SINGLY LINKED LIST---------");
-        System.out.println();
         SLLGrades();
+        System.out.println();
         System.out.println();
 
         System.out.println("----------DOUBLY LINKED LIST---------");
+        //DLLGrades();
         System.out.println();
-        DLLGrades();
         System.out.println();
     }
 }
